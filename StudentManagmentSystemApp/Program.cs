@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudentManagmentSystemApp.Data;
+using StudentManagmentSystemApp.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnStr")));
+builder.Services.AddAutoMapper(typeof(CustomProfile));
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
 ﻿namespace StudentManagmentSystemApp.Entities
 {
-    public class CourseModule
+    public class CourseModule : BaseEntity
     {
         public int CourseId { get; set; }
         public string Title { get; set; }
